@@ -18,26 +18,26 @@ use App\Http\Controllers\ProductController;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
-
-// Product Resource Routes
+// Product List Route
 Route::get('/products', [ProductController::class, 'index']);
+
 Route::middleware('auth:sanctum')->group(function () {
+    // Product  Routes
     Route::post('/products', [ProductController::class, 'store']);
     Route::put('/products/{id}', [ProductController::class, 'update']);
     Route::delete('/products/{id}', [ProductController::class, 'destroy']);
 
+    // Create order route
     Route::post('/orders', [OrderController::class, 'create']);
 
+    // Add / Rest deposit
     Route::post('/deposit', [AccountController::class, 'deposit']);
     Route::post('/reset-credit', [AccountController::class, 'resetCredit']);
 
-
-    Route::post('logout', [AuthController::class, 'logout']);
+    // Get / update / log out routes
     Route::get('me', [AuthController::class, 'me']);
     Route::put('account/update', [AccountController::class, 'update']);
+    Route::post('logout', [AuthController::class, 'logout']);
 });
 
 // Auth routes
