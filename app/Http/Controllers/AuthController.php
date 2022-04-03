@@ -55,9 +55,19 @@ class AuthController extends Controller
      * Log the user out
      *
      * @return \Illuminate\Http\JsonResponse
-     */
+    */
     public function logout()
     {
         return $this->handleResponse( auth()->user()->tokens()->delete(), 'User successfully logged-out');
+    }
+
+    /**
+     * Get the authenticated User.
+     *
+     * @return \Illuminate\Http\JsonResponse
+    */
+    public function me()
+    {
+        return $this->handleResponse( auth()->user());
     }
 }
