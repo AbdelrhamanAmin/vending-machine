@@ -5,13 +5,13 @@ You can find Postman Collection blew
 ```https://www.getpostman.com/collections/249a453e07bba954f7eb```
 
 ## Steps to Run with Docker
-1- clone the repo 
+- clone the repo 
     ```git clone git@github.com:AbdelrhamanAmin/vending-machine.git ```
-2- Switch to the repo directory 
+- Switch to the repo directory 
     ```cd vending-machine```
-3- Copy the example env file and make the required configuration changes in the .env file
+- Copy the example env file and make the required configuration changes in the .env file
     ```cp .env.exmple .env```
-4- run
+- run
     ```
     docker run --rm \
     -u "$(id -u):$(id -g)" \
@@ -20,8 +20,9 @@ You can find Postman Collection blew
     laravelsail/php81-composer:latest \
     composer install --ignore-platform-reqs
     ```
-5- Start the app
+    
+- Start the app
     ```./vendor/bin/sail up -d```
     ```./vendor/bin/sail artisan key:generate```
-6- Run migrations 
+- Run migrations 
     ```./vendor/bin/sail artisan migrate ```
