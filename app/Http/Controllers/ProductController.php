@@ -82,4 +82,9 @@ class ProductController extends Controller
             return $this->handleError('Delete Failed.', ['error'=>'Not Found'], 404);
         }
     }
+
+    public function buy(Request $request)
+    {
+
+    }
 }
