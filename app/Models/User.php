@@ -16,6 +16,8 @@ class User extends Authenticatable
     const BUYER_ROLE = 'buyer';
     const SELLER_ROLE = 'seller';
     const USER_ROLES = [self::BUYER_ROLE, self::SELLER_ROLE];
+    const ACCEPTED_DEPOSITS = [5, 10, 20, 50,100];
+
 
     /**
      * The attributes that are mass assignable.
